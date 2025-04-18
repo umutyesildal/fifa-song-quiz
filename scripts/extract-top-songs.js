@@ -8,9 +8,9 @@
 const fs = require('fs');
 const path = require('path');
 
-// Define file paths
-const songsFilePath = path.join(__dirname, './public/data/songs.json');
-const outputFilePath = path.join(__dirname, './public/data/curated-songs.json');
+// Define file paths - Fix paths to point to the correct location
+const songsFilePath = path.join(__dirname, '../public/data/songs.json');
+const outputFilePath = path.join(__dirname, '../public/data/curated-songs.json');
 
 // Main function
 function main() {
