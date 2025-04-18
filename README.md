@@ -44,7 +44,7 @@ The project uses a data pipeline to:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/fifa-song-quiz.git
+git clone https://github.com/umutyesildal/fifa-song-quiz.git
 cd fifa-song-quiz
 
 # Install dependencies
