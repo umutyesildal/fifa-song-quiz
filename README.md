@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FIFA Song Quiz 🎮 🎵
 
-## Getting Started
+A daily quiz game that challenges players to identify which FIFA game featured iconic songs from the series' legendary soundtracks.
 
-First, run the development server:
+![FIFA Song Quiz Screenshot](https://via.placeholder.com/800x450.png?text=FIFA+Song+Quiz+Screenshot)
+
+## 🎮 About the Project
+
+FIFA games are known for their incredible soundtracks that have introduced players to amazing artists and tracks. This quiz presents players with one song per day from FIFA's history and challenges them to identify which FIFA game it appeared in.
+
+Key features:
+- Daily song rotation in order of popularity
+- YouTube music player integration
+- Score tracking
+- Daily countdown timer
+- Mobile-friendly design
+
+## 📋 How It Works
+
+1. Each day, a new song is selected from the FIFA games soundtrack history
+2. Songs follow a deterministic order based on a popularity algorithm that considers:
+   - YouTube views and likes
+   - Iconic status (manually curated)
+   - Year of release
+3. Players get two chances to guess the correct FIFA game
+4. Results can be shared with friends
+
+## 🔧 Data Processing
+
+The project uses a data pipeline to:
+1. Collect data about FIFA songs from a comprehensive list
+2. Fetch YouTube statistics using a Selenium-based scraper
+3. Apply a sophisticated ranking algorithm that heavily weights iconic songs
+4. Generate JSON data files for the quiz application
+
+## 🚀 Running the Project
+
+### Prerequisites
+
+- Node.js (v14 or newer)
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/fifa-song-quiz.git
+cd fifa-song-quiz
+
+# Install dependencies
+npm install
+# or
+yarn install
+```
+
+### Development
+
+```bash
+# Run the development server
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the quiz.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build the application
+npm run build
+# or
+yarn build
 
-## Learn More
+# Start the production server
+npm run start
+# or
+yarn start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🧠 Technical Details
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Data Generation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The quiz utilizes a two-step process to generate its song database:
 
-## Deploy on Vercel
+1. **Data Collection**: Uses `youtube-search-selenium.py` to gather YouTube metrics for each FIFA song
+2. **Data Processing**: Uses `csv-to-json.js` to:
+   - Calculate popularity scores based on views, likes, and engagement
+   - Apply multipliers for iconic songs (ranked 1-100)
+   - Generate both complete and curated song lists
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Daily Song Selection
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Songs are selected in order of popularity, starting with the highest-ranked song on the first day (April 18, 2025) and progressing down the list each day. After the first cycle through all songs, the system employs different patterns to keep the quiz interesting.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- FIFA game series for the amazing soundtracks
+- YouTube for providing the music player API
+- All the incredible artists featured in FIFA games
