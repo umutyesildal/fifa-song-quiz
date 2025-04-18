@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 20, 40, 30;
+  --background-end-rgb: 30, 55, 40;
+
+  --primary-green: 35, 85, 65;
+  --primary-light: 120, 180, 150;
+  --accent-yellow: 255, 215, 110;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom button styles */
+.fifa-btn {
+  @apply bg-primary-green text-white border-2 border-primary-light/40 rounded-lg transition-all duration-200;
+  @apply hover:bg-primary-green-light hover:border-primary-light;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-opacity-50;
+}
+
+/* Custom container styles */
+.fifa-container {
+  @apply bg-primary-green-dark/70 border border-primary-green/50 rounded-xl p-6 shadow-lg;
+}
+
+/* Card styles */
+.fifa-card {
+  @apply bg-primary-green-dark/90 border-2 border-primary-green/40 rounded-lg p-5 shadow-md;
+}
+
+/* Result box styles */
+.result-correct {
+  @apply bg-green-700/30 border border-green-600/50 text-green-100;
+}
+
+.result-incorrect {
+  @apply bg-red-700/30 border border-red-600/50 text-red-100;
+}

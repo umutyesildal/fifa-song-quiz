@@ -1,0 +1,37 @@
+{
+  "name": "fifa-song-quiz",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare-data": "node scripts/extract-top-songs.js"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "next": "^12.3.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "@types/node": "^16.18.0",
+    "@types/react": "^17.0.50",
+    "@types/react-dom": "^17.0.17",
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  },
+  "description": "FIFA Song Quiz - Test your knowledge of FIFA soundtrack songs daily",
+  "main": "index.js",
+  "keywords": [
+    "fifa",
+    "music",
+    "quiz",
+    "game",
+    "soundtrack"
+  ],
+  "author": "",
+  "license": "MIT"
+}
