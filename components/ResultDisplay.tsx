@@ -50,8 +50,8 @@ export default function ResultDisplay({
             guessCount === 1 ? "try" : "tries"
           }! 🎉`
         : "I couldn't guess today's song 😔"
-    }\n\nSong: "${song.Song}"\nArtist: ${song.Artist}\nFIFA: ${
-      song.Game
+    }\n\nSong: "${song.Song}"\nArtist: ${
+      song.Artist
     }\n\nPlay at fifa-song-quiz.vercel.app.com`;
 
     if (navigator.share) {
