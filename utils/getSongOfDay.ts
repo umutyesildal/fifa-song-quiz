@@ -40,10 +40,12 @@ export async function getSongOfDay(): Promise<Song> {
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   
   // Define the starting date - April 18, 2025
-  const startDate = new Date(2025, 4, 19); // Month is 0-based, so 3 = April
+  const startDate = new Date(2025, 3, 18); // Month is 0-based, so 3 = April
   
   // Calculate days elapsed since start date
   const daysSinceStart = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+  
+  console.log(`Today: ${today.toDateString()}, Start date: ${startDate.toDateString()}, Days since start: ${daysSinceStart}`);
   
   // Handle dates before the start date
   if (daysSinceStart < 0) {
@@ -56,6 +58,7 @@ export async function getSongOfDay(): Promise<Song> {
   
   if (daysSinceStart < songCount) {
     // Direct mapping: day 0 -> song 0, day 1 -> song 1, etc.
+    console.log(`Selecting song at index ${daysSinceStart}`);
     return cachedSongs.songs[daysSinceStart];
   }
   
