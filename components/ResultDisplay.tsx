@@ -52,7 +52,7 @@ export default function ResultDisplay({
         : "I couldn't guess today's song 😔"
     }\n\nSong: "${song.Song}"\nArtist: ${
       song.Artist
-    }\n\nPlay at fifa-song-quiz.vercel.app.com`;
+    }\n\nPlay at fifa-song-quiz.vercel.app`;
 
     if (navigator.share) {
       navigator
